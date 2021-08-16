@@ -128,7 +128,7 @@ ADMAX 의 Web SDK 를 삽입하는 광고주 캠페인은 대체로 아래와 �
 아래는 <span style="color:red">랜딩 페이지</span>에 넣어 주셔야 하는 예제 코드입니다.
 
 ```javascript
-<script type="text/javascript" src="//s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
+<script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
 <script type="text/javascript">
     var tracker = new VegasTracker();
     var initData = tracker.InfoBuilder.setCountry("KR").build();
@@ -147,8 +147,8 @@ ADMAX 의 Web SDK 를 삽입하는 광고주 캠페인은 대체로 아래와 �
 더불어, 사용자 식별자를 중복으로 보내서는 안됩니다. 즉, 동일한 사용자가 2번 이상 전환 완료하더라도 최초 1번의 전환만 보내져야 합니다.
 
 ```javascript
-<script type="text/javascript" src="//s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/sha1.js"></script>
-<script type="text/javascript" src="//s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
+<script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/sha1.js"></script>
+<script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
 <script type="text/javascript">
  
     var strUser = "값" ex) 핸드폰번호, 이메일주소, 주민번호, 즉 유니크한 값 // string으로 적용해주세요
@@ -188,7 +188,7 @@ ADMAX 의 Web SDK 를 삽입하는 광고주 캠페인은 대체로 아래와 �
 아래는 <span style="color:red">랜딩 페이지</span>에 넣어 주셔야 하는 예제 코드입니다.
 
 ```javascript
-<script type="text/javascript" src="//s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
+<script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
 <script type="text/javascript">
     var tracker = new VegasTracker();
     var initData = tracker.InfoBuilder.setCountry("KR").build();
@@ -208,8 +208,8 @@ ADMAX 의 Web SDK 를 삽입하는 광고주 캠페인은 대체로 아래와 �
 더불어, 사용자 식별자를 중복으로 보내서는 안됩니다. 즉, 동일한 사용자가 2번 이상 전환 완료하더라도 최초 1번의 전환만 보내져야 합니다.
 
 ```javascript
-<script type="text/javascript" src="//s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/sha1.js"></script>
-<script type="text/javascript" src="//s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
+<script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/sha1.js"></script>
+<script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
 <script type="text/javascript">
  
     var strUser = "값" ex) 핸드폰번호, 이메일주소, 주민번호, 즉 유니크한 값 // string으로 적용해주세요
@@ -252,7 +252,7 @@ ADMAX 의 Web SDK 를 삽입하는 광고주 캠페인은 대체로 아래와 �
 아래는 <span style="color:red">랜딩 페이지</span>에 넣어 주셔야 하는 예제 코드입니다.
 
 ```javascript
-<script type="text/javascript" src="//s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
+<script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
 <script type="text/javascript">
     var tracker = new VegasTracker();
     var initData = tracker.InfoBuilder.setCountry("KR").build();
@@ -270,8 +270,8 @@ ADMAX 의 Web SDK 를 삽입하는 광고주 캠페인은 대체로 아래와 �
 
 
 ```javascript
-<script type="text/javascript" src="//s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/sha1.js"></script>
-<script type="text/javascript" src="//s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
+<script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/sha1.js"></script>
+<script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
 <script type="text/javascript">
      
  
@@ -326,7 +326,7 @@ CPC 캠페인의 경우 ADMAX 와 광고주 간 협의에 따라 사용자가 �
 
 
 ```javascript
-<script type="text/javascript" src="//s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
+<script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
 <script type="text/javascript">
     var tracker = new VegasTracker();
     var initData = tracker.InfoBuilder.setCountry("KR").build();
@@ -346,7 +346,7 @@ CPC 캠페인의 경우 ADMAX 와 광고주 간 협의에 따라 사용자가 �
 
 
 ```javascript
-<script type="text/javascript" src="//s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
+<script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
 <script type="text/javascript">
  
  
