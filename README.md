@@ -306,14 +306,66 @@ ADMAX 의 Web SDK 를 삽입하는 광고주 캠페인은 대체로 아래와 �
 
 
 
+## 6. CPP 캠페인
 
+
+#### A. CPP 랜딩 페이지
+
+CPC 캠페인의 경우 ADMAX 와 광고주 간 협의에 따라 사용자가 랜딩 페이지에 도달하여 몇 초를 머물렀는지에 따라 전환 처리가 되므로 전환 완료 페이지는 필요가 없습니다.
+
+이에 따라 사용자가 CPC 랜딩 페이지에 도달하면 ADMAX 의 Web SDK 를 초기화 하고 또 전환 완료 처리 코드도 함께 넣어주면 정해진 시간이 지났을 때 전환 처리가 됩니다.
+
+아래는 <span style="color:red">랜딩 페이지</span>에 초기화 코드와 더불어 전환 처리 코드를 넣어 주시는 예제 코드입니다.
+
+
+```javascript
+<script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
+<script type="text/javascript">
+    var tracker = new VegasTracker();
+    var initData = tracker.InfoBuilder.setCountry("KR").build();
+    tracker.init(initData);
+    tracker.firstLanding();
+    tracker.open();
+</script>
+```
+
+#### B. CPP 상품구매 전환 완료 페이지
+
+상품구매 캠페인의 경우, 전환 완료 시 사용자를 식별할 수 있는 식별자와 함께 사용자가 구매한 항목들과 주문 정보를 넣어주셔야 합니다.
+아래 예제 코드와 같이 사용자 개인정보 보호를 위해 SHA1 Hash 된 값으로 처리하는 것을 권장합니다
+
+
+```javascript
+    var strUser = "값" ex) 핸드폰번호, 이메일주소, 주민번호, 즉 유니크한 값 // string으로 적용해주세요
+    var tracker = new VegasTracker();
+    var initData = tracker.InfoBuilder.setCountry("KR").setHashId(SHA1(strUser)).build();
+    tracker.init(initData);
+  
+    /* STAR LOOP: 구매한 모든 상품에 대해 */
+    tracker.PurchaseEvent.setOrder("주문ID", "총 주문 가격");// 상품단가에서 ,(콤마)를 제거한 숫자만 전달해주세요 ex)"165,000"(x) -> "165000"(o)
+    var purchaseEvent = tracker.PurchaseEvent.build();
+    tracker.purchase(purchaseEvent);//전환 포스트백 발송
+    /* END LOOP */
+ 
+/*
+필요할 경우 사용하세요
+페이지를 이동해야 하는 경우 '이벤트 리스너 purchase_complete' 사용
+    document.addEventListener("purchase_complete", function() {
+        ... 광고주 메세지, 집계 혹은 페이지 이동 코드 ...
+        alert("완료 메세지");
+        location.href = "이동할 페이지";
+    });
+*/
+</script>
+```
 
 
 
 
 ***
 
-## 6. CPC 캠페인
+
+## 7. CPC 캠페인
 
 
 #### A. CPC 랜딩 페이지
