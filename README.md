@@ -342,7 +342,7 @@ CPC 캠페인의 경우 ADMAX 와 광고주 간 협의에 따라 사용자가 �
     tracker.init(initData);
   
     /* STAR LOOP: 구매한 모든 상품에 대해 */
-    tracker.PurchaseEvent.setOrder("주문ID", "총 주문 가격");// 상품단가에서 ,(콤마)를 제거한 숫자만 전달해주세요 ex)"165,000"(x) -> "165000"(o)
+    tracker.PurchaseEvent.setOrder("주문", "총 주문 가격");// 상품단가에서 ,(콤마)를 제거한 숫자만 전달해주세요 ex)"165,000"(x) -> "165000"(o)
     var purchaseEvent = tracker.PurchaseEvent.build();
     tracker.purchase(purchaseEvent);//전환 포스트백 발송
     /* END LOOP */
