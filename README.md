@@ -336,16 +336,15 @@ CPC 캠페인의 경우 ADMAX 와 광고주 간 협의에 따라 사용자가 �
 
 
 ```javascript
+    var p_id = [];//상품ID
+    var p_price = [];//상품 가격
+    var p_count = [];//상품 개수
+    
     var strUser = "값" ex) 핸드폰번호, 이메일주소, 주민번호, 즉 유니크한 값 // string으로 적용해주세요
     var tracker = new VegasTracker();
     var initData = tracker.InfoBuilder.setCountry("KR").setHashId(SHA1(strUser)).build();
     tracker.init(initData);
-  
-    /* STAR LOOP: 구매한 모든 상품에 대해 */
-    tracker.PurchaseEvent.setOrder("주문", "총 주문 가격");// 상품단가에서 ,(콤마)를 제거한 숫자만 전달해주세요 ex)"165,000"(x) -> "165000"(o)
-    var purchaseEvent = tracker.PurchaseEvent.build();
-    tracker.purchase(purchaseEvent);//전환 포스트백 발송
-    /* END LOOP */
+    tracker.cpp(p_id, p_price, p_count);
  
 /*
 필요할 경우 사용하세요
