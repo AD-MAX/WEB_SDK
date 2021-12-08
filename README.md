@@ -336,6 +336,7 @@ CPC 캠페인의 경우 ADMAX 와 광고주 간 협의에 따라 사용자가 �
 
 
 ```javascript
+<script type="text/javascript">
     var p_id = [];//상품ID
     var p_price = [];//상품 가격
     var p_count = [];//상품 개수
