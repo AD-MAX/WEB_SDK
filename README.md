@@ -306,67 +306,10 @@ ADMAX 의 Web SDK 를 삽입하는 광고주 캠페인은 대체로 아래와 �
 
 
 
-## 6. CPP 캠페인
-
-
-#### A. CPP 랜딩 페이지
-
-사용자가 상품구매 랜딩 페이지에 도달하면 ADMAX 의 Web SDK 를 초기화 해야 합니다.
-
-아래는 <span style="color:red">랜딩 페이지</span>에 넣어 주셔야 하는 예제 코드입니다.
-
-
-```javascript
-<script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/vegas-kor-o/sdk/web/vegastracker.min.js"></script>
-<script type="text/javascript">
-    var tracker = new VegasTracker();
-    var initData = tracker.InfoBuilder.setCountry("KR").build();
-    tracker.init(initData);
-    tracker.firstLanding();
-    tracker.open();
-</script>
-```
-
-#### B. CPP 상품구매 전환 완료 페이지
-
-CPP 상품구매 캠페인의 경우, 
-한꺼번에 결제하더라도 각각의 상품을 각 전환 포스트백으로 보내게 됩니다.   
-p_id, p_price, p_count 에 순서대로 최종 결제한 상품의 ID(이름), 가격, 개수를 배열에 순서대로 넣어주셔야 합니다.   
-전환 완료 시 사용자를 식별할 수 있는 식별자와 함께 사용자가 구매한 항목들과 주문 정보를 넣어주셔야 합니다.   
-아래 예제 코드와 같이 사용자 개인정보 보호를 위해 SHA1 Hash 된 값으로 처리하는 것을 권장합니다.   
-
-
-```javascript
-<script type="text/javascript">
-    var p_id = [];//상품ID
-    var p_price = [];//상품 가격
-    var p_count = [];//상품 개수
-    
-    var strUser = "값" ex) 핸드폰번호, 이메일주소, 주민번호, 즉 유니크한 값 // string으로 적용해주세요
-    var tracker = new VegasTracker();
-    var initData = tracker.InfoBuilder.setCountry("KR").setHashId(SHA1(strUser)).build();
-    tracker.init(initData);
-    tracker.cpp(p_id, p_price, p_count);
- 
-/*
-필요할 경우 사용하세요
-페이지를 이동해야 하는 경우 '이벤트 리스너 purchase_complete' 사용
-    document.addEventListener("purchase_complete", function() {
-        ... 광고주 메세지, 집계 혹은 페이지 이동 코드 ...
-        alert("완료 메세지");
-        location.href = "이동할 페이지";
-    });
-*/
-</script>
-```
 
 
 
-
-***
-
-
-## 7. CPC 캠페인
+## 6. CPC 캠페인
 
 
 #### A. CPC 랜딩 페이지
